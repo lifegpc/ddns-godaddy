@@ -1,7 +1,7 @@
 from ddns_godaddy.cml import Opts
 from ddns_godaddy.config import Config
 from ddns_godaddy.sess import GoDaddySession
-from time import sleep
+from time import sleep, time, strftime
 from requests import Session
 from json import dumps
 
@@ -25,7 +25,7 @@ class Checker:
     def update(self):
         try:
             r = self._nses.get("http://ip-api.com/json").json()['query']
-            print(r)
+            print(strftime('%Y-%m-%dT%H:%M:%SZ'), ":", r)
             cur = getattr(self, '_cur', None)
             cfg = self._cfg
             if cur is None or cur['data'] != r:
