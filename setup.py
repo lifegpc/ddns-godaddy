@@ -28,7 +28,7 @@ else:
     params = {
         "install_requires": ["pyyaml", "requests"],
         'entry_points': {
-            'console_scripts': ['ddns-godaddy = ddns-godaddy:start']
+            'console_scripts': ['ddns-godaddy = ddns_godaddy:start']
         }
     }
 setup(
