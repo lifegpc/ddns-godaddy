@@ -49,5 +49,5 @@ class Config:
         self.name = v
         if 'ttl' in t:
             v = t['ttl']
-            if isinstance(v, int) and v >= 600:
+            if isinstance(v, int) and v < 600:
                 raise('ttl must be a integer and must >= 600.')
